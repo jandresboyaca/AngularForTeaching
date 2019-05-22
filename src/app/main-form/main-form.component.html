@@ -1,0 +1,48 @@
+<mat-tab-group mat-align-tabs="start" headerPosition="above" [selectedIndex]="1">
+  <mat-tab label="Basic info">
+    <ng-template matTabContent>
+      <form [formGroup]="Form">
+        <mat-form-field>
+          <input matInput placeholder="Enter name" formControlName="userName">
+          <mat-error>
+            Name is <strong>required</strong>
+          </mat-error>
+          <mat-hint align="start">Please enter <strong>Name</strong>
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Enter Phone" formControlName="userPhone">
+          <mat-error> Phone <strong>required</strong>
+          </mat-error>
+          <mat-hint align="start">Please enter <strong>Phone</strong>
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Enter Email" formControlName="userEmail" required>
+          <mat-error *ngIf="Form.controls.userEmail.invalid">Format Email Invalid</mat-error>
+          <mat-error>
+            Email is <strong>required</strong>
+          </mat-error>
+          <mat-hint align="start">Please enter <strong>Email</strong>
+          </mat-hint>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a start date" formControlName="userStartDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker2" placeholder="Choose a end date" formControlName="userEndDate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+        <hr>
+        <button [disabled]="!Form.valid" (click)="onSubmit()" mat-raised-button color="primary" type="button">
+          <mat-icon>done</mat-icon>
+          <span> Save </span>
+        </button>
+      </form>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: false,
+  API: {API_URL: '', API_USERS_URL: ''}
 };
