@@ -1,4 +1,7 @@
-# AlianzaFe
+# AngularForTeaching
+
+
+This repository was created to teach or demonstrate basic Angular,TypeScript,JS,CSS,HTML knowledge
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
